@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import SwiftyJSON
+
+class Image {
+    var albumId: Int = 0
+    var id: Int = 0
+    var thumbnailUrl: String = ""
+    var title: String = ""
+    var url: String = ""
+    
+    init(json: JSON) {
+        self.albumId = json["albumId"].int ?? 0
+        self.id = json["id"].int ?? 0
+        self.thumbnailUrl = json["thumbnailUrl"].string ?? ""
+        self.title = json["title"].string ?? ""
+        self.url = json["url"].string ?? ""
+    }
+}
