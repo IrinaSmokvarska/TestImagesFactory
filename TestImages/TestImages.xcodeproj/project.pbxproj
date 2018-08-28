@@ -16,6 +16,11 @@
 		CECCE9262135B4CE002574FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9252135B4CE002574FA /* User.swift */; };
 		CECCE9282135BC5B002574FA /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9272135BC5B002574FA /* UsersViewController.swift */; };
 		CECCE92A2135BC6B002574FA /* FavoriteImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9292135BC6B002574FA /* FavoriteImagesViewController.swift */; };
+		CECCE92D2135BD67002574FA /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE92B2135BD67002574FA /* UserCollectionViewCell.swift */; };
+		CECCE92E2135BD67002574FA /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE92C2135BD67002574FA /* UserCollectionViewCell.xib */; };
+		CECCE9312135BD72002574FA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE92F2135BD72002574FA /* ImageCollectionViewCell.swift */; };
+		CECCE9322135BD72002574FA /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9302135BD72002574FA /* ImageCollectionViewCell.xib */; };
+		CECCE9342135BF55002574FA /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9332135BF55002574FA /* Image.swift */; };
 		F71B9BA0D2776CDEF8E3095A /* Pods_TestImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2444A1D96E57FB29F4600C /* Pods_TestImages.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		CECCE9252135B4CE002574FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CECCE9272135BC5B002574FA /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		CECCE9292135BC6B002574FA /* FavoriteImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteImagesViewController.swift; sourceTree = "<group>"; };
+		CECCE92B2135BD67002574FA /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		CECCE92C2135BD67002574FA /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
+		CECCE92F2135BD72002574FA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CECCE9302135BD72002574FA /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		CECCE9332135BF55002574FA /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E9EF754D4D26A6FF969B12FC /* Pods-TestImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestImages/Pods-TestImages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				CECCE9252135B4CE002574FA /* User.swift */,
+				CECCE9332135BF55002574FA /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +122,10 @@
 		CECCE91D2135B07A002574FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CECCE92B2135BD67002574FA /* UserCollectionViewCell.swift */,
+				CECCE92C2135BD67002574FA /* UserCollectionViewCell.xib */,
+				CECCE92F2135BD72002574FA /* ImageCollectionViewCell.swift */,
+				CECCE9302135BD72002574FA /* ImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,8 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECCE9152135B01C002574FA /* LaunchScreen.storyboard in Resources */,
+				CECCE92E2135BD67002574FA /* UserCollectionViewCell.xib in Resources */,
 				CECCE9122135B01C002574FA /* Assets.xcassets in Resources */,
 				CECCE9102135B01A002574FA /* Main.storyboard in Resources */,
+				CECCE9322135BD72002574FA /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,11 +253,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TestImages/Pods-TestImages-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -255,10 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECCE92A2135BC6B002574FA /* FavoriteImagesViewController.swift in Sources */,
+				CECCE9342135BF55002574FA /* Image.swift in Sources */,
 				CECCE9222135B120002574FA /* Constants.swift in Sources */,
+				CECCE9312135BD72002574FA /* ImageCollectionViewCell.swift in Sources */,
 				CECCE90B2135B01A002574FA /* AppDelegate.swift in Sources */,
 				CECCE9282135BC5B002574FA /* UsersViewController.swift in Sources */,
 				CECCE9262135B4CE002574FA /* User.swift in Sources */,
+				CECCE92D2135BD67002574FA /* UserCollectionViewCell.swift in Sources */,
 				CECCE9242135B385002574FA /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

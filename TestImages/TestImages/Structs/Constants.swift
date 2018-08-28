@@ -8,11 +8,11 @@
 
 import Foundation
 
-static let baseUrl = "https://jsonplaceholder.typicode.com/"
+let baseUrl = "https://jsonplaceholder.typicode.com/"
 
 struct ApiRoutes {
     static func usersPath() -> String { return "users" }
-    static func userPhotos(id: String, startIndex: Int, limit: Int) -> { return "users/\(id)/photos?_start=\(startIndex)&_limit=\(limit)" }
+    static func userPhotos(id: String, startIndex: Int, limit: Int) -> String { return "users/\(id)/photos?_start=\(startIndex)&_limit=\(limit)" }
 }
 
 

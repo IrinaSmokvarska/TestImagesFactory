@@ -7,12 +7,23 @@
 //
 
 import Foundation
+import Alamofire
 
 class ApiClient{
     
     static let shared = ApiClient()
     
     func getAllUsers() {
+        
+        Alamofire.request(baseUrl + ApiRoutes.usersPath()).responseJSON { (response) in
+
+            if response.result.isFailure {
+                print("error")
+            } else {
+                
+            }
+            
+        }
         
     }
 }
