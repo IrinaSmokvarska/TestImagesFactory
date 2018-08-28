@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE64DEBF2135F6C3004D20C1 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DEBE2135F6C3004D20C1 /* ImageViewerViewController.swift */; };
 		CECCE90B2135B01A002574FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE90A2135B01A002574FA /* AppDelegate.swift */; };
 		CECCE9102135B01A002574FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECCE90E2135B01A002574FA /* Main.storyboard */; };
 		CECCE9122135B01C002574FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECCE9112135B01C002574FA /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		92B7E23582527F58B0EA09B6 /* Pods-TestImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestImages/Pods-TestImages.release.xcconfig"; sourceTree = "<group>"; };
 		9A2444A1D96E57FB29F4600C /* Pods_TestImages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestImages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE64DEBE2135F6C3004D20C1 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		CECCE9072135B01A002574FA /* TestImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECCE90A2135B01A002574FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECCE90F2135B01A002574FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				CECCE9272135BC5B002574FA /* UsersViewController.swift */,
 				CECCE9382135D29A002574FA /* UserDetailsViewController.swift */,
 				CECCE9292135BC6B002574FA /* FavoriteImagesViewController.swift */,
+				CE64DEBE2135F6C3004D20C1 /* ImageViewerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				CECCE9372135CBDE002574FA /* UserSectionController.swift in Sources */,
 				CECCE92A2135BC6B002574FA /* FavoriteImagesViewController.swift in Sources */,
+				CE64DEBF2135F6C3004D20C1 /* ImageViewerViewController.swift in Sources */,
 				CECCE9342135BF55002574FA /* Image.swift in Sources */,
 				CECCE9222135B120002574FA /* Constants.swift in Sources */,
 				CECCE9402135D35E002574FA /* UserDetailCollectionViewCell.swift in Sources */,

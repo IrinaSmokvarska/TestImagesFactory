@@ -62,7 +62,14 @@ class UserDetailsViewController: UIViewController {
        cell.countOfImgs.text = String(self.start+self.limit) + "/" + self.allCount
         
     }
-
+    
+    func openImage(image: Image) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ImageViewerViewController") as! ImageViewerViewController
+        controller.image = image
+        self.navigationController?.pushViewController(controller, animated: true)
+       // self.push(controller, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

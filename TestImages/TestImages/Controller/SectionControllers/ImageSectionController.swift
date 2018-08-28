@@ -24,7 +24,7 @@ class ImageSectionController: ListSectionController {
             fatalError()
         }
         
-        cell.imgView.kf.setImage(with: URL(string: (image?.url)!))
+        cell.imgView.kf.setImage(with: URL(string: (image?.url)!), options: [.cacheMemoryOnly])
         cell.lblImgTitle.text = image?.title
         
         return cell
@@ -32,7 +32,9 @@ class ImageSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
-
+        if let vController = self.viewController as? UserDetailsViewController {
+            vController.openImage(image: image!)
+        }
     }
     
     override func didUpdate(to object: Any) {
