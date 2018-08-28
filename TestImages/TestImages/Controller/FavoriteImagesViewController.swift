@@ -22,12 +22,19 @@ class FavoriteImagesViewController: UIViewController {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        getSavedImages()
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         adapter.collectionView = favCollectionView
         adapter.dataSource = self
-        getSavedImages()
+        
         // Do any additional setup after loading the view.
     }
 

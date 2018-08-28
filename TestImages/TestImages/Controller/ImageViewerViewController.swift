@@ -41,8 +41,11 @@ class ImageViewerViewController: UIViewController {
     
     func saveImage(){
         if UserDefaults.standard.object(forKey: "favImages") != nil {
-            let decoded = UserDefaults.standard.object(forKey: "image") as! Data
+            let decoded = UserDefaults.standard.object(forKey: "favImages") as! Data
             var imgs = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Image]
+            if let _ = imgs.filter({$0.id == image!.id}).first {
+                return
+            }
             imgs.append(image!)
             
             let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: imgs)
