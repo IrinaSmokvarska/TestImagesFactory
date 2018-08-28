@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bc9-vc-Lj6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
         <!--Item 1-->
         <scene sceneID="Ojw-gs-rLF">
             <objects>
-                <viewController id="1fO-co-OcM" sceneMemberID="viewController">
+                <viewController id="1fO-co-OcM" customClass="UsersViewController" customModule="TestImages" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IIZ-gv-tcO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,10 +56,50 @@
                         <viewLayoutGuide key="safeArea" id="7cW-SF-6Vr"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="hme-zM-YZp"/>
+                    <connections>
+                        <outlet property="usersCollectionView" destination="wOH-Y2-PBc" id="DS2-RL-YpC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAz-o0-mxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="997.60000000000002" y="-168.6656671664168"/>
+        </scene>
+        <!--User Details View Controller-->
+        <scene sceneID="nv2-OQ-vYR">
+            <objects>
+                <viewController id="NQ0-z0-qlf" customClass="UserDetailsViewController" customModule="TestImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PEb-7u-d5A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eZN-3X-aoQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BHi-4s-Fzd">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eZN-3X-aoQ" firstAttribute="top" secondItem="PEb-7u-d5A" secondAttribute="top" id="8oL-0g-O3u"/>
+                            <constraint firstItem="eZN-3X-aoQ" firstAttribute="leading" secondItem="dfk-Vh-Q6r" secondAttribute="leading" id="Nel-tP-bgW"/>
+                            <constraint firstItem="eZN-3X-aoQ" firstAttribute="bottom" secondItem="dfk-Vh-Q6r" secondAttribute="bottom" id="S8F-B1-20a"/>
+                            <constraint firstItem="eZN-3X-aoQ" firstAttribute="trailing" secondItem="dfk-Vh-Q6r" secondAttribute="trailing" id="SuF-W9-ClJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dfk-Vh-Q6r"/>
+                    </view>
+                    <connections>
+                        <outlet property="userCollectionView" destination="eZN-3X-aoQ" id="O6v-Dk-2Fb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7L-ix-wbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791.2" y="-168.6656671664168"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VOa-5H-oce">

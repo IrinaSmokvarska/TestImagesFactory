@@ -21,6 +21,8 @@ class UserSectionController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "UserCollectionViewCell", bundle: nil, for: self, at: index) as? UserCollectionViewCell else {
             fatalError()
         }
+        cell.lblName.text = user?.name
+        cell.lblUsername.text = user?.userName
         
         return cell
     }

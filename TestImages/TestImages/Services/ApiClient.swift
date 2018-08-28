@@ -25,9 +25,9 @@ class ApiClient{
                 completion(nil, response.result.error)
             } else {
                 var users = Array<User>()
-                if let arrayJson = response.result.value as? [JSON] {
+                if let arrayJson = response.result.value as? [[String:Any]] {
                     for json in arrayJson {
-                        users.append(User(json: json))
+                        users.append(User(json: JSON(json)))
                     }
                 }
                 completion(users, nil)

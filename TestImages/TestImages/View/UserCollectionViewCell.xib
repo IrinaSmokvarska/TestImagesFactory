@@ -23,13 +23,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nQ-4U-mnD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-U3-5nn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-U3-5nn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-BU-daB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EK-BU-daB">
                                 <rect key="frame" x="0.0" y="30" width="375" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.24476762830000001" green="0.57798882240000005" blue="0.70871668779999997" alpha="0.92808219179999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +63,7 @@
                 <outlet property="lblName" destination="Jo0-U3-5nn" id="Nr0-oH-Xrt"/>
                 <outlet property="lblUsername" destination="8EK-BU-daB" id="ALS-Ra-BPw"/>
             </connections>
-            <point key="canvasLocation" x="196.5" y="59"/>
+            <point key="canvasLocation" x="210.5" y="61"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -11,7 +11,13 @@ import IGListKit
 
 class UsersViewController: UIViewController {
     
-    var allUsers = [User]()
+    @IBOutlet weak var usersCollectionView: UICollectionView!
+    
+    var allUsers = [User]() {
+        didSet{
+            self.adapter.performUpdates(animated: true, completion: nil)
+        }
+    }
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -19,7 +25,9 @@ class UsersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        adapter.collectionView = usersCollectionView
+        adapter.dataSource = self
+        getUsers()
         // Do any additional setup after loading the view.
     }
 
@@ -28,6 +36,15 @@ class UsersViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getUsers() {
+        ApiClient.shared.getAllUsers { (users, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.allUsers = users!
+        }
+    }
 
     /*
     // MARK: - Navigation
