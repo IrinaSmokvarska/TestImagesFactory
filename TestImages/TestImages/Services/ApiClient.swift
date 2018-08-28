@@ -8,19 +8,29 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
+
+typealias UsersCompletionHandler = (_ users: Array<User>?, _ error: Error?) -> ()
 
 class ApiClient{
     
     static let shared = ApiClient()
     
-    func getAllUsers() {
+    func getAllUsers(completion: @escaping UsersCompletionHandler) {
         
         Alamofire.request(baseUrl + ApiRoutes.usersPath()).responseJSON { (response) in
 
             if response.result.isFailure {
                 print("error")
+                completion(nil, response.result.error)
             } else {
-                
+                var users = Array<User>()
+                if let arrayJson = response.result.value as? [JSON] {
+                    for json in arrayJson {
+                        users.append(User(json: json))
+                    }
+                }
+                completion(users, nil)
             }
             
         }

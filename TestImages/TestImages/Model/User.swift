@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import IGListKit
 
 class User {
     
@@ -63,4 +64,20 @@ struct Company {
 struct Geo {
     var lat: String = ""
     var lng: String = ""
+}
+
+
+extension User: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return id as NSObjectProtocol
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let user = object as? User else{
+            return false
+        }
+        return id == user.id && userName == user.userName
+    }
+    
+    
 }

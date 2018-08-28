@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import IGListKit
 
 class UsersViewController: UIViewController {
-
+    
+    var allUsers = [User]()
+    
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +39,21 @@ class UsersViewController: UIViewController {
     }
     */
 
+}
+
+extension UsersViewController: ListAdapterDataSource {
+    
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return allUsers as [ListDiffable]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        return UserSectionController()
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return nil
+    }
+    
+    
 }
