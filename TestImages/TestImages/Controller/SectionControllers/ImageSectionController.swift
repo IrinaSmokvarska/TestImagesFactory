@@ -7,9 +7,38 @@
 //
 
 import UIKit
+import IGListKit
+import Kingfisher
 
-class ImageSectionController: UIViewController {
+class ImageSectionController: ListSectionController {
+    private var image: Image?
+    var imgCellHeight: CGFloat = 105.0
+    
+    override func sizeForItem(at index: Int) -> CGSize {
+        return CGSize(width: self.collectionContext!.containerSize.width, height: imgCellHeight)
+       
+    }
+    
+    override func cellForItem(at index: Int) -> UICollectionViewCell {
+        guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ImageCollectionViewCell", bundle: nil, for: self, at: index) as? ImageCollectionViewCell else {
+            fatalError()
+        }
+        
+        cell.imgView.kf.setImage(with: URL(string: (image?.url)!))
+        cell.lblImgTitle.text = image?.title
+        
+        return cell
+        
+    }
+    
+    override func didSelectItem(at index: Int) {
 
-
+    }
+    
+    override func didUpdate(to object: Any) {
+        if let img = object as? Image {
+            self.image = img
+        }
+    }
 
 }

@@ -13,6 +13,13 @@ class UserSectionController: ListSectionController {
     
     private var user: User?
     
+    override init() {
+        super.init()
+        if self.viewController is UserDetailsViewController {
+            displayDelegate = self
+        }
+    }
+    
     override func sizeForItem(at index: Int) -> CGSize {
         
         if self.viewController is UsersViewController {
@@ -61,4 +68,28 @@ class UserSectionController: ListSectionController {
         }
     }
 
+}
+
+extension UserSectionController: ListDisplayDelegate {
+    func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController) {
+        
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController) {
+        
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, willDisplay sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
+        if index == 0 {
+            if let vController = self.viewController as? UserDetailsViewController {
+                vController.updateTotalCount(cell: cell as! UserDetailCollectionViewCell)
+            }
+        }
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, didEndDisplaying sectionController: ListSectionController, cell: UICollectionViewCell, at index: Int) {
+        
+    }
+    
+    
 }

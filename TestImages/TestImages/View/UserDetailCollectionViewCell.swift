@@ -12,6 +12,7 @@ class UserDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblCompanyName: UILabel!
+    @IBOutlet weak var countOfImgs: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,8 +14,11 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var userCollectionView: UICollectionView!
     
     var user = User()
+    var data = [ListDiffable]()
     var start = 0
     var limit = 50
+    var allCount = ""
+    var loading = false
     
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
@@ -25,23 +28,39 @@ class UserDetailsViewController: UIViewController {
         super.viewDidLoad()
         adapter.collectionView = userCollectionView
         adapter.dataSource = self
-        
+        adapter.scrollViewDelegate = self
+        getImagesOfUser(id: user.id)
+        data.append(user)
         // Do any additional setup after loading the view.
     }
-    // self.adapter.performUpdates(animated: true, completion: nil)
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func getUserWithId(id: Int) {
-        ApiClient.shared.getImagesOfUserWithId(id: user.id, start: start, limit: limit) { (images, error) in
+    func getImagesOfUser(id: Int) {
+        ApiClient.shared.getImagesOfUserWithId(id: user.id, start: start, limit: limit) { (images, count, error) in
+            self.loading = false
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
+            print("start: \(self.start)")
+            print("limit: \(self.limit)")
+            self.start = self.limit + self.start
+            self.allCount = count!
+            self.user.userImages = images!
+            self.data.append(contentsOf: images! as [ListDiffable])
+            self.adapter.performUpdates(animated: true, completion:nil)
+            
             
         }
+    }
+    
+    func updateTotalCount(cell: UserDetailCollectionViewCell) {
+       cell.countOfImgs.text = String(self.start+self.limit) + "/" + self.allCount
+        
     }
 
     /*
@@ -59,17 +78,32 @@ class UserDetailsViewController: UIViewController {
 extension UserDetailsViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return [user] as [ListDiffable]
+        return data as [ListDiffable]
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return UserSectionController()
+        if object is User {
+             return UserSectionController()
+        } else {
+            return ImageSectionController()
+        }
+       
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return nil
     }
     
-    
+}
+
+extension UserDetailsViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+        if !loading && distance < 200 {
+            loading = true
+            getImagesOfUser(id: user.id)
+            
+        }
+    }
 }
 

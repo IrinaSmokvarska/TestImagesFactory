@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import IGListKit
 
 class Image {
     var albumId: Int = 0
@@ -23,4 +24,19 @@ class Image {
         self.title = json["title"].string ?? ""
         self.url = json["url"].string ?? ""
     }
+}
+
+extension Image: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return "image\(id)" as NSObjectProtocol
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let img = object as? Image else{
+            return false
+        }
+        return id == img.id && thumbnailUrl == img.thumbnailUrl
+    }
+    
+    
 }
