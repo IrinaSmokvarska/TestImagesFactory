@@ -14,29 +14,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UserDetailCollectionViewCell" customModule="TestImages" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pp-VY-QpG">
-                        <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-e1-JyU">
-                                <rect key="frame" x="0.0" y="0.0" width="345" height="33.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-Rz-vJ6">
-                                <rect key="frame" x="0.0" y="34" width="345" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iNb-Rz-vJ6">
+                                <rect key="frame" x="0.0" y="50.5" width="345" height="49.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.81444078679999998" green="0.12861850859999999" blue="0.1393250227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdg-0R-lzp">
-                                <rect key="frame" x="0.0" y="67.5" width="345" height="32.5"/>
+                                <rect key="frame" x="0.0" y="100" width="345" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.06044194847" green="0.48018717770000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -67,8 +67,13 @@
                 <constraint firstAttribute="bottom" secondItem="2pp-VY-QpG" secondAttribute="bottom" id="TAG-yG-kpp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="345" height="100"/>
-            <point key="canvasLocation" x="181.5" y="79"/>
+            <size key="customSize" width="345" height="150"/>
+            <connections>
+                <outlet property="lblAddress" destination="iNb-Rz-vJ6" id="1oD-si-lno"/>
+                <outlet property="lblCompanyName" destination="Vdg-0R-lzp" id="2uc-8J-Dyw"/>
+                <outlet property="lblName" destination="x9D-e1-JyU" id="J6i-aj-q03"/>
+            </connections>
+            <point key="canvasLocation" x="181.5" y="104"/>
         </collectionViewCell>
     </objects>
 </document>

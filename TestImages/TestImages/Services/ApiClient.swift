@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 typealias UsersCompletionHandler = (_ users: Array<User>?, _ error: Error?) -> ()
+typealias UserCompletionHandler = (_ images: Array<Image>?, _ error: Error?) -> ()
 
 class ApiClient{
     
@@ -33,6 +34,24 @@ class ApiClient{
                 completion(users, nil)
             }
             
+        }
+        
+    }
+    
+    func getImagesOfUserWithId(id: Int, start: Int, limit: Int, completion: @escaping UserCompletionHandler) {
+        Alamofire.request(baseUrl+ApiRoutes.userPhotos(id: String(id), startIndex: start, limit: limit)).responseJSON { (response) in
+            if response.result.isFailure {
+                print("error")
+                completion(nil, response.result.error)
+            } else {
+                var imagesOfUser = Array<Image>()
+                if let arrayJson = response.result.value as? [[String:Any]] {
+                    for json in arrayJson {
+                        imagesOfUser.append(Image(json: JSON(json)))
+                    }
+                }
+                completion(imagesOfUser, nil)
+            }
         }
         
     }

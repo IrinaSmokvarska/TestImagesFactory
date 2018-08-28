@@ -24,7 +24,6 @@
 		CECCE9372135CBDE002574FA /* UserSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9362135CBDE002574FA /* UserSectionController.swift */; };
 		CECCE9392135D29A002574FA /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE9382135D29A002574FA /* UserDetailsViewController.swift */; };
 		CECCE93B2135D310002574FA /* ImageSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE93A2135D310002574FA /* ImageSectionController.swift */; };
-		CECCE93D2135D325002574FA /* UserDetailSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE93C2135D325002574FA /* UserDetailSectionController.swift */; };
 		CECCE9402135D35E002574FA /* UserDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECCE93E2135D35E002574FA /* UserDetailCollectionViewCell.swift */; };
 		CECCE9412135D35E002574FA /* UserDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECCE93F2135D35E002574FA /* UserDetailCollectionViewCell.xib */; };
 		F71B9BA0D2776CDEF8E3095A /* Pods_TestImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2444A1D96E57FB29F4600C /* Pods_TestImages.framework */; };
@@ -52,7 +51,6 @@
 		CECCE9362135CBDE002574FA /* UserSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSectionController.swift; sourceTree = "<group>"; };
 		CECCE9382135D29A002574FA /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		CECCE93A2135D310002574FA /* ImageSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSectionController.swift; sourceTree = "<group>"; };
-		CECCE93C2135D325002574FA /* UserDetailSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailSectionController.swift; sourceTree = "<group>"; };
 		CECCE93E2135D35E002574FA /* UserDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		CECCE93F2135D35E002574FA /* UserDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		E9EF754D4D26A6FF969B12FC /* Pods-TestImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestImages/Pods-TestImages.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,8 +147,8 @@
 			children = (
 				CECCE9352135CBB1002574FA /* SectionControllers */,
 				CECCE9272135BC5B002574FA /* UsersViewController.swift */,
-				CECCE9292135BC6B002574FA /* FavoriteImagesViewController.swift */,
 				CECCE9382135D29A002574FA /* UserDetailsViewController.swift */,
+				CECCE9292135BC6B002574FA /* FavoriteImagesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,7 +174,6 @@
 			children = (
 				CECCE9362135CBDE002574FA /* UserSectionController.swift */,
 				CECCE93A2135D310002574FA /* ImageSectionController.swift */,
-				CECCE93C2135D325002574FA /* UserDetailSectionController.swift */,
 			);
 			path = SectionControllers;
 			sourceTree = "<group>";
@@ -309,7 +306,6 @@
 				CECCE90B2135B01A002574FA /* AppDelegate.swift in Sources */,
 				CECCE9282135BC5B002574FA /* UsersViewController.swift in Sources */,
 				CECCE93B2135D310002574FA /* ImageSectionController.swift in Sources */,
-				CECCE93D2135D325002574FA /* UserDetailSectionController.swift in Sources */,
 				CECCE9262135B4CE002574FA /* User.swift in Sources */,
 				CECCE9392135D29A002574FA /* UserDetailsViewController.swift in Sources */,
 				CECCE92D2135BD67002574FA /* UserCollectionViewCell.swift in Sources */,

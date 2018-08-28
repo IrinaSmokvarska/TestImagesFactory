@@ -9,7 +9,10 @@
 import UIKit
 
 class UserDetailCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblCompanyName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

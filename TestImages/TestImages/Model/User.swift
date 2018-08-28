@@ -22,6 +22,8 @@ class User {
     var website: String = ""
     var userImages: Array<Image>?
     
+    init() {}
+    
     init(json: JSON) {
         self.name = json["name"].string ?? ""
         self.userAddress = Address(json: json["address"])
